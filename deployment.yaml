@@ -40,7 +40,7 @@ spec:
         - name: busybox
           image: busybox
           command: ["/bin/sh"]
-          args: ["-c", "top -d 5 > /mnt/volume1/top.output"]
+          args: ["-c", "while true; do date > /mnt/volume1/stream && sleep 5s; done"]
           volumeMounts:
             - name: volume1
               mountPath: /mnt/volume1
